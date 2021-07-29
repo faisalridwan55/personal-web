@@ -1,11 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-export const VContainer = styled.div`
+const BasicContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  width: ${props => props.width};
+  align-items: ${props => props.alignItems};
+  flex-direction: ${props => props.flexDirection};
+  justify-content: ${props => props.justifyContent};
 `;
 
-export const HContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
+export const VContainer = (props) => <BasicContainer flexDirection="column" {...props} />
+
+export const HContainer = (props) => <BasicContainer flexDirection="row" {...props} />
