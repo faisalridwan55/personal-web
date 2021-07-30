@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-import { VContainer } from "./Grid";
+import { Box } from "./Grid";
 
-const PageContainer = styled(VContainer)`
+const PageContainer = styled(Box)`
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
+  padding: 100px 10%;
   background-color: ${props => props.backgroundColor};
 `;
 

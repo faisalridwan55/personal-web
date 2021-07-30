@@ -8,8 +8,6 @@ import SkillAndPortofolios from './containers/S&P';
 import NotPageFound from './containers/NotPageFound';
 
 function App() {
-  console.log(window.location.pathname);
-
   return (
     <div className="App">
       <Router>

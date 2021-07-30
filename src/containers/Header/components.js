@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-import { HContainer } from "../../components/Grid";
+import { Row } from "../../components/Grid";
 import { BLACK, WHITE } from "../../constants/Colors";
 import { DIST_SIZE, FONT_SIZE } from "../../constants/Size";
 
 
-export const HeaderContainer = styled(HContainer)`
+export const HeaderContainer = styled(Row)`
     top: 0;
     width: 100%;
     position: absolute;

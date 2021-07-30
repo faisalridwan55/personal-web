@@ -5,7 +5,7 @@ import { FONT_SIZE } from "../constants/Size";
 export const Title = styled.text`
     color: ${WHITE};
     font-weight: bold;
-    text-align: center;
+    text-align: ${props => props.textAlign};
     font-family: Zilla Slab, serif;
     font-size: ${props => `${FONT_SIZE[props.size || 'xxxl']}`};
 `;

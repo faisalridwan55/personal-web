@@ -8,6 +8,6 @@ const BasicContainer = styled.div`
   justify-content: ${props => props.justifyContent};
 `;
 
-export const VContainer = (props) => <BasicContainer flexDirection="column" {...props} />
+export const Box = (props) => <BasicContainer flexDirection="column" {...props} />
 
-export const HContainer = (props) => <BasicContainer flexDirection="row" {...props} />
+export const Row = (props) => <BasicContainer flexDirection="row" {...props} />
