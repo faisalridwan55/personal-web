@@ -6,9 +6,10 @@ import { BACKGROUND_COLOR } from "../constants/Colors";
 
 
 const PageContainer = (props) => {
+  const verticalPadding = 100;
   const PageContainer = styled(Box)`
-    min-height: 100vh;
-    padding: 100px 10%;
+    padding: ${verticalPadding}px 10%;
+    min-height: calc(100vh - ${verticalPadding * 2}px);
     background-color: ${props => BACKGROUND_COLOR[props.currentPath || 'home']};
   `;
   const page = useLocation().pathname.replace('/', '');
