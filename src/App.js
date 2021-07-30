@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-import { VContainer } from './components/Grid';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from './containers/Home';
@@ -9,20 +7,14 @@ import Contact from './containers/Contact';
 import SkillAndPortofolios from './containers/S&P';
 import NotPageFound from './containers/NotPageFound';
 
-import { WHITE } from './constants/Colors';
-
-const AppContainer = styled(VContainer)`
-  min-height: 100vh;
-  align-items: center;
-  background-color: ${WHITE};
-`;
-
 function App() {
+  console.log(window.location.pathname);
+
   return (
-    <AppContainer>
+    <div className="App">
       <Router>
         <Header />
-        <div className="content-container">
+        <div className="content">
           <Switch>
             <Route exact path="/">
               <Home />
@@ -42,7 +34,7 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </AppContainer>
+    </div>
   );
 }
 

@@ -1,19 +1,24 @@
-import { CustomNavLink, HeaderContainer, ItemContainer } from "./components";
+import { HContainer, VContainer } from "../../components/Grid";
+import { Title } from "../../components/Text";
+import { CustomNavLink, HeaderContainer } from "./components";
+
+const itemContainerStyle = {width: "30%"};
 
 const Header = () => {
     return ( 
         <HeaderContainer>
-            <ItemContainer justifyContent="space-around">
+            <HContainer justifyContent="space-around" {...itemContainerStyle}>
                 <CustomNavLink exact to="/">Home</CustomNavLink>
                 <CustomNavLink to="/about">About</CustomNavLink>
-            </ItemContainer>
-            <ItemContainer justifyContent="center">
-                <h2>Faisal Ridwan</h2>
-            </ItemContainer>
-            <ItemContainer justifyContent="space-around">
-                <CustomNavLink to="/skill">Skill & Porto</CustomNavLink>
+            </HContainer>
+            <VContainer alignItem="Center" {...itemContainerStyle}>
+                <Title size="xl">Faisal</Title>
+                <Title size="xl">Ridwan</Title>
+            </VContainer>
+            <HContainer justifyContent="space-around" {...itemContainerStyle}>
+                <CustomNavLink to="/skill">Skill & Portofolio</CustomNavLink>
                 <CustomNavLink to="/contact">Contact</CustomNavLink>
-            </ItemContainer>
+            </HContainer>
         </HeaderContainer>
      );
 }

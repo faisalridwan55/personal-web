@@ -1,8 +1,12 @@
+import { BACKGROUND_COLOR } from "../../constants/Colors";
+import PageContainer from "../../components/PageContainer";
+import { Title } from "../../components/Text";
+
 const Contact = () => {
     return ( 
-        <>
-            <h1>This is where you can find my contact</h1>
-        </>
+        <PageContainer className="home-container" backgroundColor={BACKGROUND_COLOR.contact}>
+            <Title>This is where you can find my contact</Title>
+        </PageContainer>
      );
 }
  

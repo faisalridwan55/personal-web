@@ -1,8 +1,12 @@
+import { BACKGROUND_COLOR } from "../../constants/Colors";
+import PageContainer from "../../components/PageContainer";
+import { Title } from "../../components/Text";
+
 const SkillAndPortofolios = () => {
     return ( 
-        <>
-            <h1>This is Skill & Portofolios page</h1>
-        </>
+        <PageContainer className="home-container" backgroundColor={BACKGROUND_COLOR.skill}>
+            <Title>This is Skill & Portofolios page</Title>
+        </PageContainer>
      );
 }
  
