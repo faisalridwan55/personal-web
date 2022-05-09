@@ -1,20 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { Box } from "../../components/Grid";
 import { Text } from "../../components/Text";
 import { BLACK } from "../../constants/Colors";
 
-export const Footer = ({time}) => (
-    <Text 
-        style={{
-            bottom: 0,
-            padding: '16px',
-            position: "absolute"
-        }}>
-        {`It's ${time} now in my place (Jakarta)`}
-    </Text>
-)
+const timeFormatter = () => {
+    const time = new Date().toLocaleTimeString()
+
+    return `${time.slice(0,4)} ${time.slice(8)}`
+}
+
+export const Footer = () => {
+    const [time, setTime] = useState(timeFormatter())
+
+    useEffect(() => {
+        setTimeout(() => {
+            setTime(timeFormatter())
+        }, 60000)
+    }, [time])
+
+    return (
+        <Text 
+            style={{
+                bottom: 0,
+                padding: '16px',
+                position: "absolute"
+            }}>
+            {`It's ${time} now in my place (Jakarta)`}
+        </Text>
+    )
+}
 
 export const SecretText = () => {
     const [revealSecret, setRevealSecret] = useState(false)
