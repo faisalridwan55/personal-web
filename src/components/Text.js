@@ -10,7 +10,7 @@ export const Title = styled(motion.p)`
     text-align: ${props => props.textAlign};
     font-family: Zilla Slab, serif;
     ${props => `font-size: ${FONT_SIZE[props.size || 'xxxl']};`}
-    `;
+`;
 
 export const Text = styled.text`
     text-align: ${props => props.textAlign};
