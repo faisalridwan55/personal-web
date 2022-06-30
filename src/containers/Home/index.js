@@ -4,6 +4,7 @@ import { Box } from "../../components/Grid";
 import { BLACK } from "../../constants/Colors";
 import { Title, Text } from "../../components/Text";
 import PageContainer from "../../components/PageContainer";
+import CollapsibleRow from "../../components/CollapsibleRow";
 
 const Home = () => ( 
     <PageContainer 
@@ -11,7 +12,7 @@ const Home = () => (
         justifyContent="center"
         className="home-container"
     >
-        <Text size="xxl">Hi, guys!</Text>
+        <Text size="xxl">Hi!</Text>
         <Title 
             style={{fontSize: '80px'}}
             textAlign='center'
@@ -26,9 +27,12 @@ const Home = () => (
                 Currently, I'm working as an Associate Project Manager at one of 
             </Text>
             <Text size="xl" color={BLACK} textAlign="center" bold>
-                company that provides technology equipment for Indonesian Millitary organization
+                company that provides IT solutions for Indonesian Millitary organization
             </Text>
             <SecretText />
+            <CollapsibleRow>
+
+            </CollapsibleRow>
         </Box>
         <Footer />
     </PageContainer>

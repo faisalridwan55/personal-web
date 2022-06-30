@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { Box } from "../../components/Grid";
 import { Text } from "../../components/Text";
@@ -49,34 +49,36 @@ export const SecretText = () => {
             minHeight="100px"
             marginTop='8px'
         >
-            <Text as={motion.i}
-                size="l"
-                color={BLACK}
-                textAlign="center"
-                whileHover={{
-                    scale: 1.2,
-                    textShadow: '0px 0px 10px rgba(255, 255, 255, 1)', 
-                    cursor: 'pointer'
-                }}
-                onClick={() => setRevealSecret(true)}
-                animate={!revealSecret ? 'visible' : 'hidden'}
-                variants={revealVariants}
-                transition={{duration: 1}}
-            >
-                Click to reveal my secret
-            </Text>
-            {revealSecret && 
+            <AnimatePresence>
                 <Text as={motion.i}
                     size="l"
                     color={BLACK}
                     textAlign="center"
-                    animate={revealSecret ? 'visible' : 'hidden'}
-                    variants={secretVariants}
+                    whileHover={{
+                        scale: 1.2,
+                        textShadow: '0px 0px 10px rgba(255, 255, 255, 1)', 
+                        cursor: 'pointer'
+                    }}
+                    onClick={() => setRevealSecret(true)}
+                    animate={!revealSecret ? 'visible' : 'hidden'}
+                    variants={revealVariants}
                     transition={{duration: 1}}
                 >
-                    I still use my free time for make some code
+                    Click to reveal my secret
                 </Text>
-            }
+                {revealSecret && 
+                    <Text as={motion.i}
+                        size="l"
+                        color={BLACK}
+                        textAlign="center"
+                        animate={revealSecret ? 'visible' : 'hidden'}
+                        variants={secretVariants}
+                        transition={{duration: 1}}
+                    >
+                        I still use my spare time for coding
+                    </Text>
+                }
+            </AnimatePresence>
         </Box>
     )
 }
