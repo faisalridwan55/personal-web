@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from './containers/Home';
@@ -6,12 +7,22 @@ import Header from './containers/Header';
 import Contact from './containers/Contact';
 import SkillAndPortofolios from './containers/S&P';
 import NotPageFound from './containers/NotPageFound';
+import Sidebar from "./components/Sidebar";
 
 function App() {
+  const [isSidebar, setIsSidebar] = useState(false);
+
   return (
     <div className="App">
       <Router>
-        <Header />
+        <Header
+          showSidebar={isSidebar}
+          handleNavButtonClicked={() => setIsSidebar(!isSidebar)}
+        />
+        <Sidebar 
+          showSidebar={isSidebar} 
+          handleNavButtonClicked={() => setIsSidebar(!isSidebar)}
+        />
         <div className="content">
           <Switch>
             <Route exact path="/">

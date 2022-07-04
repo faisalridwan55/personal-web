@@ -3,14 +3,16 @@ import { motion } from "framer-motion";
 
 import { Title } from "../../components/Text";
 import { Row, Box } from "../../components/Grid";
-import { CustomNavLink, HeaderContainer } from "./components";
+import { CustomNavLink, HeaderContainer, NavButton } from "./components";
 
 const itemContainerStyle = {width: "30%"};
 const titleHeaderStyle = {size:"xl", textAlign:"center"};
 
-const Header = () => {
+const Header = ({showSidebar, handleNavButtonClicked}) => {
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768 // Tablet size
+    const desktop = width > breakPoint;
+
     useEffect(() => {
         const handleResize = () => {
             setWidth(window.innerWidth);
@@ -23,7 +25,7 @@ const Header = () => {
     }, [])
 
     const NavTitle = () => (
-        <Box as={motion.div} alignItem="Center" {...itemContainerStyle} whileHover={{ y: 20 }}>
+        <Box as={motion.div} alignItem="Center" width={desktop ? '30%' : '100%'} whileHover={{ y: 20 }}>
             <Title {...titleHeaderStyle}>Faisal</Title>
             <Title {...titleHeaderStyle}>Ridwan</Title>
         </Box>
@@ -31,7 +33,7 @@ const Header = () => {
 
     return ( 
         <HeaderContainer>
-            {width > breakPoint ? 
+            {desktop ? 
             <>
                 <Row justifyContent="space-around" {...itemContainerStyle}>
                     <CustomNavLink exact to="/">Home</CustomNavLink>
@@ -46,7 +48,10 @@ const Header = () => {
             :
             <>
                 <Box>
-                    Icon
+                    <NavButton 
+                        open={showSidebar} 
+                        onClick={() => handleNavButtonClicked(!showSidebar)} 
+                    />
                 </Box>
                 <Box>
                     <NavTitle />

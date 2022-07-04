@@ -14,7 +14,7 @@ const Home = () => (
     >
         <Text size="xxl">Hi!</Text>
         <Title 
-            style={{fontSize: '80px'}}
+            style={{fontSize: '80px', zIndex:'997'}}
             textAlign='center'
             transition={{duration: 1}}
             initial={{ opacity: 0, scale: 0.5 }}
