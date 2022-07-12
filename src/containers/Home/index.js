@@ -25,9 +25,7 @@ const Home = () => (
         </Title>
         <Box>
             <Text size="xl" color={BLACK} textAlign="center" bold>
-                Currently, I responsible to manage the technical aspect of the project 
-            </Text>
-            <Text size="xl" color={BLACK} textAlign="center" bold>
+                Currently, I responsible to manage the technical aspect of the project
                 at the company that provides IT solutions for Indonesian Military organization
             </Text>
             <SecretText />
