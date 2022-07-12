@@ -8,14 +8,17 @@ import { DIST_SIZE, FONT_SIZE } from "../../constants/Size";
 import { AnimatePresence } from "framer-motion";
 
 
-export const HeaderContainer = styled(Row)`
-    top: 0;
-    width: 100%;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    margin: ${DIST_SIZE.xs} 0;
-`
+export const HeaderContainer = props => {
+    const headerContainerMargin = DIST_SIZE().xs
+    const Comp = styled(Row)`
+        top: 0;
+        width: 100%;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    `
+    return <Comp margin={`${headerContainerMargin} 0px`} {...props} />
+}
 
 export const CustomNavLink = ({children, ...props}) => {
     const defaultFontSize = FONT_SIZE().md

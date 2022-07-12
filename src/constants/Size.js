@@ -14,10 +14,14 @@ export const FONT_SIZE = () => {
     })
 }
 
-export const DIST_SIZE = {
-    xs: '8px',
-    sm: '16px',
-    md: '24px',
-    l: '32px',
-    xl: '40px',
+export const DIST_SIZE = () => {
+    const isDesktop = IsDesktop()
+   
+    return ({
+        xs: isDesktop ? '8px' : '4px',
+        sm: isDesktop ? '16px' : '8px',
+        md: isDesktop ? '24px' : '12px',
+        l: isDesktop ? '32px' : '16px',
+        xl: isDesktop ? '40px' : '20px',
+    })
 }

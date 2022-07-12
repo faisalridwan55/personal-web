@@ -7,6 +7,7 @@ const BasicContainer = styled.div`
   align-items: ${props => props.alignItems};
   flex-direction: ${props => props.flexDirection};
   justify-content: ${props => props.justifyContent};
+  ${props => props.padding && `padding: ${props.padding}`};
   ${props => props.margin && `margin: ${props.margin}`};
   ${props => props.marginTop && `margin-top: ${props.marginTop}`};
   ${props => props.marginRight && `margin-right: ${props.marginRight}`};
