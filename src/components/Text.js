@@ -9,12 +9,12 @@ export const Title = styled(motion.p)`
     font-weight: bold;
     text-align: ${props => props.textAlign};
     font-family: Zilla Slab, serif;
-    ${props => `font-size: ${FONT_SIZE[props.size || 'xxxl']};`}
+    ${props => `font-size: ${FONT_SIZE()[props.size || 'xxxl']};`}
 `;
 
 export const Text = styled.text`
     text-align: ${props => props.textAlign};
     color: ${props => props.color || WHITE};
     ${props => props.bold && `font-weight: bold;`}
-    ${props => `font-size: ${FONT_SIZE[props.size || 'md']};`}
+    ${props => `font-size: ${FONT_SIZE()[props.size || 'md']};`}
 `;

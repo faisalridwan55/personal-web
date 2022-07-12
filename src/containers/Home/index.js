@@ -5,6 +5,7 @@ import { BLACK } from "../../constants/Colors";
 import { Title, Text } from "../../components/Text";
 import PageContainer from "../../components/PageContainer";
 import CollapsibleRow from "../../components/CollapsibleRow";
+import { FONT_SIZE } from "../../constants/Size";
 
 const Home = () => ( 
     <PageContainer 
@@ -14,7 +15,7 @@ const Home = () => (
     >
         <Text size="xxl">Hi!</Text>
         <Title 
-            style={{fontSize: '80px', zIndex:'997'}}
+            style={{fontSize: FONT_SIZE().title, zIndex:'997'}}
             textAlign='center'
             transition={{duration: 1}}
             initial={{ opacity: 0, scale: 0.5 }}
@@ -24,10 +25,10 @@ const Home = () => (
         </Title>
         <Box>
             <Text size="xl" color={BLACK} textAlign="center" bold>
-                Currently, I'm working as an Associate Project Manager at one of 
+                Currently, I responsible to manage the technical aspect of the project 
             </Text>
             <Text size="xl" color={BLACK} textAlign="center" bold>
-                company that provides IT solutions for Indonesian Millitary organization
+                at the company that provides IT solutions for Indonesian Millitary organization
             </Text>
             <SecretText />
             <CollapsibleRow>

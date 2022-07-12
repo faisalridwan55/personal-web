@@ -18,10 +18,11 @@ export const HeaderContainer = styled(Row)`
 `
 
 export const CustomNavLink = ({children, ...props}) => {
+    const defaultFontSize = FONT_SIZE().md
     const MyNav = styled(NavLink)`
         color: ${WHITE};
         text-decoration: none;
-        font-size: ${props.fontSize || FONT_SIZE.md};
+        font-size: ${props.fontSize || defaultFontSize};
         &:hover {
             color: ${BLACK};
             opacity: 0.8;
@@ -41,6 +42,7 @@ export const CustomNavLink = ({children, ...props}) => {
 export const NavButton = ({open, ...props}) => {
     const style = {
         left: 15,
+        top: 5,
         position: 'absolute',
         borderStyle: 'none',
         backgroundColor: 'transparent',

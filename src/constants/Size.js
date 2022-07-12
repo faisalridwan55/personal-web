@@ -1,10 +1,17 @@
-export const FONT_SIZE = {
-    sm: '16px',
-    md: '20px',
-    l: '24px',
-    xl: '28px',
-    xxl: '32px',
-    xxxl: '36px',
+import IsDesktop from "../functions/isDesktop"
+
+export const FONT_SIZE = () => {
+    const isDesktop = IsDesktop()
+
+    return ({
+        sm: isDesktop ? '16px' : '8px',
+        md: isDesktop ? '20px' : '10px',
+        l: isDesktop ? '24px' : '12px',
+        xl: isDesktop ? '28px' : '14px',
+        xxl: isDesktop ? '32px' : '16px',
+        xxxl: isDesktop ? '36px' : '18px',
+        title: isDesktop ? '80px' : '40px',
+    })
 }
 
 export const DIST_SIZE = {

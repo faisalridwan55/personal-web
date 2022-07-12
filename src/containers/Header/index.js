@@ -1,31 +1,19 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
+import { CustomNavLink, HeaderContainer, NavButton } from "./components";
 
 import { Title } from "../../components/Text";
 import { Row, Box } from "../../components/Grid";
-import { CustomNavLink, HeaderContainer, NavButton } from "./components";
+import IsDesktop from "../../functions/isDesktop";
 
 const itemContainerStyle = {width: "30%"};
 const titleHeaderStyle = {size:"xl", textAlign:"center"};
 
 const Header = ({showSidebar, handleNavButtonClicked}) => {
-    const [width, setWidth] = useState(window.innerWidth);
-    const breakPoint = 768 // Tablet size
-    const desktop = width > breakPoint;
+    const isDesktop = IsDesktop()
 
-    useEffect(() => {
-        const handleResize = () => {
-            setWidth(window.innerWidth);
-        }
-        window.addEventListener('resize', handleResize);
-        
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        }
-    }, [])
-
-    const NavTitle = () => (
-        <Box as={motion.div} alignItem="Center" width={desktop ? '30%' : '100%'} whileHover={{ y: 20 }}>
+        const NavTitle = () => (
+        <Box as={motion.div} alignItem="Center" width={isDesktop ? '30%' : '100%'} whileHover={{ y: 20 }}>
             <Title {...titleHeaderStyle}>Faisal</Title>
             <Title {...titleHeaderStyle}>Ridwan</Title>
         </Box>
@@ -33,7 +21,7 @@ const Header = ({showSidebar, handleNavButtonClicked}) => {
 
     return ( 
         <HeaderContainer>
-            {desktop ? 
+            {isDesktop ? 
             <>
                 <Row justifyContent="space-around" {...itemContainerStyle}>
                     <CustomNavLink exact to="/">Home</CustomNavLink>

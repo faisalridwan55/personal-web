@@ -25,7 +25,7 @@ const SidebarContainer = styledComponents.div`
 const Sidebar = ({showSidebar, handleNavButtonClicked}) => {
     const color = BACKGROUND_COLOR[useLocation().pathname.replace('/', '') || 'home']
     const rowStyle = {marginBottom: DIST_SIZE.l}
-    const navStyle = {fontSize: FONT_SIZE.l}
+    const navStyle = {fontSize: FONT_SIZE().l}
     
     return (
         <AnimatePresence>
