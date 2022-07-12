@@ -10,7 +10,7 @@ const LoadingContainer = styled(Box)`
 	bottom: 0;
 	width: 10em;
 	height: 10em;
-	z-index: 998;
+	z-index: 999;
 	margin: auto;
 	position: fixed;
 	overflow: visible;

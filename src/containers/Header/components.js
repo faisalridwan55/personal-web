@@ -21,7 +21,7 @@ export const CustomNavLink = ({children, ...props}) => {
     const MyNav = styled(NavLink)`
         color: ${WHITE};
         text-decoration: none;
-        font-size: ${FONT_SIZE.md};
+        font-size: ${props.fontSize || FONT_SIZE.md};
         &:hover {
             color: ${BLACK};
             opacity: 0.8;
