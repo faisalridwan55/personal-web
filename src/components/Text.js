@@ -13,6 +13,7 @@ export const Title = styled(motion.p)`
 `;
 
 export const Text = styled.text`
+    width: ${props => props.width};
     text-align: ${props => props.textAlign};
     color: ${props => props.color || WHITE};
     ${props => props.bold && `font-weight: bold;`}

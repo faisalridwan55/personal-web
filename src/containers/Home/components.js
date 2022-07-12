@@ -48,14 +48,16 @@ export const SecretText = () => {
     return (
         <Box 
             onMouseLeave={() => setRevealSecret(false)}
-            minHeight="100px"
+            minHeight='100px'
             marginTop='8px'
+            alignItems='center'
         >
             <AnimatePresence>
                 <Text as={motion.i}
                     size="l"
                     color={BLACK}
                     textAlign="center"
+                    width='fit-content'
                     whileHover={{
                         scale: 1.2,
                         textShadow: '0px 0px 10px rgba(255, 255, 255, 1)', 
