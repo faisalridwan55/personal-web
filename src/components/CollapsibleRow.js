@@ -1,8 +1,16 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import styled from "styled-components";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 
 import { DIST_SIZE } from "../constants/Size";
-import { Row } from "./Grid";
+import { Box, Row } from "./Grid";
+import ResizeablePanel from "./ResizeablePanel";
+
+const CollapsibleContainer = styled(Box)`
+		border: 1px ridge #000000;
+		border-radius: 8px 8px 8px 8px;
+		background-color: rgba(0,0,0,.1);
+`;
 
 const CollapsHeader = props => (
 	<Row 
@@ -11,9 +19,6 @@ const CollapsHeader = props => (
 			cursor: 'pointer',
 			position: 'relative',
 			alignItems: 'center',
-			border: '1px ridge #000000',
-			borderRadius: '8px 8px 8px 8px',
-			backgroundColor: 'rgba(0,0,0,.1)',
 		}}
 		{...props}
 	/>
@@ -45,7 +50,7 @@ export const CollapsButton = ({isOpen, ...props}) => {
     return (
         <AnimatePresence exitBeforeEnter>
             <motion.button style={style} initial="initial" animate="final" {...props}>
-                {isOpen ? (
+                {!isOpen ? (
                     <div>
                         <motion.svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-plus-square" viewBox="0 0 16 16">
 							<motion.path 
@@ -96,11 +101,22 @@ export const CollapsButton = ({isOpen, ...props}) => {
 const CollapsibleRow = (props) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const padding = DIST_SIZE().sm
+	const animationDuration = .5
+
 	return (
-		<CollapsHeader padding={padding}>
-			This is collapsible header (click me!)
-			<CollapsButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
-		</CollapsHeader>
+		<CollapsibleContainer as={motion.div}>
+			<CollapsHeader onClick={() => setIsOpen(!isOpen)} padding={padding}>
+				This is collapsible header (click me!)
+				<CollapsButton isOpen={isOpen} />
+			</CollapsHeader>
+			<MotionConfig transition={{transition: animationDuration}}>
+				<ResizeablePanel duration={animationDuration}>
+					{isOpen &&
+						<div style={{padding}}>{props.children}</div>
+					}
+				</ResizeablePanel>
+			</MotionConfig>
+		</CollapsibleContainer>
 	)
 }
 

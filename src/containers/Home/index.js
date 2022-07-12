@@ -28,11 +28,16 @@ const Home = () => (
                 Currently, I responsible to manage the technical aspect of the project 
             </Text>
             <Text size="xl" color={BLACK} textAlign="center" bold>
-                at the company that provides IT solutions for Indonesian Millitary organization
+                at the company that provides IT solutions for Indonesian Military organization
             </Text>
             <SecretText />
             <CollapsibleRow>
-
+                <li>
+                    This is a homemade website 
+                    <a href="https://github.com/faisalridwan55/personal-web" target="_blank" rel="noopener noreferrer">
+                        (Repo link)
+                    </a>
+                </li>
             </CollapsibleRow>
         </Box>
         <Footer />
