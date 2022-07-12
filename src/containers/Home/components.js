@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Box } from "../../components/Grid";
 import { Text } from "../../components/Text";
 import { BLACK } from "../../constants/Colors";
+import IsDesktop from "../../functions/isDesktop";
 
 const timeFormatter = () => {
     const time = new Date().toLocaleTimeString()
@@ -34,12 +35,13 @@ export const Footer = () => {
 
 export const SecretText = () => {
     const [revealSecret, setRevealSecret] = useState(false)
+    const isDesktop = IsDesktop()
     const revealVariants = {
         visible: { opacity: 1},
         hidden: { opacity: 0}
     }
     const secretVariants = {
-        visible: { opacity: 1, y: -30},
+        visible: { opacity: 1, y: isDesktop ? -30 : -20},
         hidden: { opacity: 0}
     }
 

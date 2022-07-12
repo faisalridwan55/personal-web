@@ -48,7 +48,10 @@ const Sidebar = ({showSidebar, handleNavButtonClicked}) => {
                             open={showSidebar} 
                             onClick={() => handleNavButtonClicked(!showSidebar)} 
                         />
-                        <Box style={{position: 'absolute', marginTop: DIST_SIZE.xl}}>
+                        <Box 
+                            style={{position: 'absolute', marginTop: DIST_SIZE.xl}}
+                            onClick={() => handleNavButtonClicked(!showSidebar)} 
+                        >
                             <Row {...rowStyle}>
                                 <CustomNavLink {...navStyle} exact to="/">Home</CustomNavLink>
                             </Row>
