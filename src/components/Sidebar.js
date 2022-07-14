@@ -26,6 +26,7 @@ const Sidebar = ({showSidebar, handleNavButtonClicked}) => {
     const color = BACKGROUND_COLOR[useLocation().pathname.replace('/', '') || 'home']
     const rowStyle = {marginBottom: DIST_SIZE().l}
     const navStyle = {fontSize: FONT_SIZE().l}
+    const containerMargin = DIST_SIZE().xl 
     
     return (
         <AnimatePresence>
@@ -40,7 +41,7 @@ const Sidebar = ({showSidebar, handleNavButtonClicked}) => {
                         height: '100%',
                         position: 'fixed',
                         zIndex: '998',
-                        backgroundColor: color
+                        backgroundColor: color,
                     }}
                 >
                     <SidebarContainer>
@@ -49,7 +50,7 @@ const Sidebar = ({showSidebar, handleNavButtonClicked}) => {
                             onClick={() => handleNavButtonClicked(!showSidebar)} 
                         />
                         <Box 
-                            style={{position: 'absolute', marginTop: DIST_SIZE().xl}}
+                            style={{position: 'absolute', marginTop: containerMargin}}
                             onClick={() => handleNavButtonClicked(!showSidebar)} 
                         >
                             <Row {...rowStyle}>

@@ -74,7 +74,7 @@ export const NavButton = ({open, ...props}) => {
                         <motion.svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-x-lg" viewBox="0 0 16 16">
                             <motion.path
                                 key="close-icon"
-                                stroke={open ? "black" : "white"} 
+                                stroke={"white"} 
                                 strokeWidth={2}
                                 fill="none"
                                 variants={pathVariants}
@@ -94,7 +94,7 @@ export const NavButton = ({open, ...props}) => {
                             <motion.path 
                                 key="open-icon"
                                 fill-rule="evenodd"
-                                stroke={open ? "black" : "white"}  
+                                stroke={"white"}  
                                 fill="none"
                                 variants={pathVariants}
                                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
