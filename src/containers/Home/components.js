@@ -9,7 +9,7 @@ import IsDesktop from "../../functions/isDesktop";
 const timeFormatter = () => {
     const time = new Date().toLocaleTimeString()
 
-    return `${time.slice(0,4)} ${time.slice(8)}`
+    return `${time.slice(0,5)} ${time.slice(8)}`
 }
 
 export const Footer = () => {
@@ -25,8 +25,11 @@ export const Footer = () => {
         <Text 
             style={{
                 bottom: 0,
+                right: 0,
+                left: 0,
                 padding: '16px',
-                position: "absolute"
+                position: 'absolute',
+                textAlign: 'center'
             }}>
             {`It's ${time} now in my place (Jakarta)`}
         </Text>

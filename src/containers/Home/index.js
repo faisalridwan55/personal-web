@@ -31,10 +31,13 @@ const Home = () => (
             <SecretText />
             <CollapsibleRow>
                 <li>
-                    This is a homemade website 
+                    This is a homemade website made by React Framework
                     <a href="https://github.com/faisalridwan55/personal-web" target="_blank" rel="noopener noreferrer">
                         (Repo link)
                     </a>
+                </li>
+                <li>
+                    This website is still on development, update frequently when I have free time
                 </li>
             </CollapsibleRow>
         </Box>
