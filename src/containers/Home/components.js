@@ -31,7 +31,7 @@ export const Footer = () => {
                 position: 'absolute',
                 textAlign: 'center'
             }}>
-            {`It's ${time} now in my place (Jakarta)`}
+            {`It's ${time} now at my place (Jakarta)`}
         </Text>
     )
 }
