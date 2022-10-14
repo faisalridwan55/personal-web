@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { Box } from "../../components/Grid";
 import { Text } from "../../components/Text";
 import { BLACK } from "../../constants/Colors";
 import IsDesktop from "../../functions/isDesktop";
+import { AnimatedComponent } from "../../components/AnimatedComponent";
 
 const timeFormatter = () => {
   const time = new Date().toLocaleTimeString();
@@ -56,7 +57,7 @@ export const SecretText = () => {
       marginTop="8px"
       alignItems="center"
     >
-      <AnimatePresence>
+      <AnimatedComponent>
         <Text
           as={motion.i}
           size="l"
@@ -88,7 +89,7 @@ export const SecretText = () => {
             I have an experience to be Project Manager from previous company
           </Text>
         )}
-      </AnimatePresence>
+      </AnimatedComponent>
     </Box>
   );
 };

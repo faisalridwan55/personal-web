@@ -6,12 +6,13 @@ import { Box } from "./Grid";
 import { BACKGROUND_COLOR } from "../constants/Colors";
 import Loading from "./Loading";
 
-const PageContainer = (props) => {
+const PageContainer = (props: any) => {
   const [firstLoad, setFirstLoad] = useState(true);
-  
+
   const verticalPadding = 100;
-  const page = useLocation().pathname.replace('/', '');
-  const color = BACKGROUND_COLOR[useLocation().pathname.replace('/', '') || 'home']
+  const page = useLocation().pathname.replace("/", "");
+  const color =
+    BACKGROUND_COLOR[useLocation().pathname.replace("/", "") || "home"];
 
   const PageContainer = styled(Box)`
     background-color: ${color};
@@ -21,15 +22,16 @@ const PageContainer = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-        setFirstLoad(false)
-    }, 2000)
-}, [firstLoad])
+      setFirstLoad(false);
+    }, 2000);
+  }, [firstLoad]);
 
   return (
-  <PageContainer currentPath={page} {...props}>
-    {firstLoad && <Loading color={color} />}
-    {props.children}
-  </PageContainer>)
-}
+    <PageContainer currentPath={page} {...props}>
+      {firstLoad && <Loading color={color} />}
+      {props.children}
+    </PageContainer>
+  );
+};
 
-export default PageContainer
+export default PageContainer;

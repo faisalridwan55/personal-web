@@ -5,9 +5,9 @@ export const BLACK = "#001021";
 export const BLUE = "#0267C1";
 export const YELLOW = "#F4F726";
 
-export const BACKGROUND_COLOR = {
-    home: "#73BFE8",
-    about: "#9DD2A3",
-    skill: "#FAD4C0",
-    contact: "#9B9ECE",
-}
+export const BACKGROUND_COLOR: { [key: string]: string } = {
+  home: "#73BFE8",
+  about: "#9DD2A3",
+  skill: "#FAD4C0",
+  contact: "#9B9ECE",
+};
