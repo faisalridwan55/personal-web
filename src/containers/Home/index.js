@@ -1,11 +1,11 @@
 import { Footer, SecretText } from "./components";
 
 import { Box } from "../../components/Grid";
-import { BLACK } from "../../constants/Colors";
+import { FONT_SIZE } from "../../constants/Size";
+import { BLACK, RED } from "../../constants/Colors";
 import { Title, Text } from "../../components/Text";
 import PageContainer from "../../components/PageContainer";
 import CollapsibleRow from "../../components/CollapsibleRow";
-import { FONT_SIZE } from "../../constants/Size";
 
 const Home = () => (
   <PageContainer
@@ -29,20 +29,26 @@ const Home = () => (
       </Text>
       <SecretText />
       <CollapsibleRow title="This is collapsible header (click me!)">
-        <li style={{ lineHeight: "32px" }}>
-          {`This is a homemade website made by React Framework `}
-          <a
-            href="https://github.com/faisalridwan55/personal-web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            (Repo link)
-          </a>
-        </li>
-        <li>
-          This website is still on development, update frequently when I have
-          free time
-        </li>
+        <ul style={{ color: RED, margin: 0, paddingLeft: "20px" }}>
+          <li>
+            <Text>
+              {`This is a homemade website made by React Framework `}
+              <a
+                href="https://github.com/faisalridwan55/personal-web"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                (Repo link)
+              </a>
+            </Text>
+          </li>
+          <li>
+            <Text>
+              This website is still on development, update frequently when I
+              have free time
+            </Text>
+          </li>
+        </ul>
       </CollapsibleRow>
     </Box>
     <Footer />

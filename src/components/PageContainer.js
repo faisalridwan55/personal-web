@@ -14,7 +14,7 @@ const PageContainer = (props) => {
 
   const PageContainer = styled(Box)`
     background-color: ${BLACK};
-    padding: ${verticalPadding}px 0;
+    padding: ${verticalPadding}px 10%;
     min-height: calc(100vh - ${verticalPadding * 2}px);
   `;
 

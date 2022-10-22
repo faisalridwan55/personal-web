@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { NavLink, useLocation } from "react-router-dom";
 
 import { Title } from "../../components/Text";
 import { Box, Row } from "../../components/Grid";
-import { TEXT_COLOR, WHITE } from "../../constants/Colors";
+import { useColor } from "../../functions/useColor";
 import { DIST_SIZE, FONT_SIZE } from "../../constants/Size";
 
 export const HeaderContainer = (props) => {
@@ -21,7 +21,7 @@ export const HeaderContainer = (props) => {
 };
 
 export const NavTitle = ({ isDesktop }) => {
-  const color = TEXT_COLOR[useLocation().pathname.replace("/", "") || "home"];
+  const color = useColor();
   const titleHeaderStyle = { size: "xl", textAlign: "center", color };
 
   return (
@@ -39,7 +39,7 @@ export const NavTitle = ({ isDesktop }) => {
 
 export const CustomNavLink = ({ children, ...props }) => {
   const defaultFontSize = FONT_SIZE().md;
-  const color = TEXT_COLOR[useLocation().pathname.replace("/", "") || "home"];
+  const color = useColor();
 
   const MyNav = styled(NavLink)`
     color: ${color};

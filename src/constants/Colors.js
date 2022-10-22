@@ -6,9 +6,9 @@ export const BLUE = "#61dffa";
 export const GREEN = "#93feac";
 export const YELLOW = "#F4F726";
 
-export const TEXT_COLOR = {
-    home: RED,
-    about: GREEN,
-    skill: BLUE,
-    contact: YELLOW,
-}
+export const COLOR = {
+  home: RED,
+  about: GREEN,
+  skill: BLUE,
+  contact: YELLOW,
+};

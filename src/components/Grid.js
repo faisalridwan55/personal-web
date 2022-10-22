@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const BasicContainer = styled.div`
   display: flex;
+  width: ${(props) => props.width};
   min-height: ${(props) => props.minHeight};
-  width: ${(props) => props.width || "100%"};
   align-items: ${(props) => props.alignItems};
   flex-direction: ${(props) => props.flexDirection};
   justify-content: ${(props) => props.justifyContent};

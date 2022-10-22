@@ -19,7 +19,7 @@ const Header = ({ showSidebar, handleNavButtonClicked }) => {
   return (
     <HeaderContainer>
       {isDesktop ? (
-        <Row>
+        <Row width="100%">
           <Box style={{ ...itemContainerStyle }}>
             <CustomNavLink exact to="/">
               Home
