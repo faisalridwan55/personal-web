@@ -67,11 +67,13 @@ export const CustomNavLink = ({ children, ...props }) => {
 };
 
 export const NavButton = ({ open, ...props }) => {
+  const color = useColor();
+
   const style = {
+    top: open ? 10 : 5,
     left: 15,
-    top: 5,
-    position: "absolute",
     borderStyle: "none",
+    position: "absolute",
     backgroundColor: "transparent",
   };
 
@@ -80,13 +82,19 @@ export const NavButton = ({ open, ...props }) => {
       opacity: 0,
       pathLength: 0,
     },
-    final: {
+    animate: {
       opacity: 1,
       pathLength: 1,
       transition: {
+        delay: 0.4,
         duration: 1,
         ease: "easeInOut",
       },
+    },
+    exit: {
+      opacity: 0,
+      pathLength: 0,
+      transition: { duration: 0.15 },
     },
   };
 
@@ -104,10 +112,12 @@ export const NavButton = ({ open, ...props }) => {
             >
               <motion.path
                 key="close-icon"
-                stroke={"white"}
                 strokeWidth={2}
+                stroke={color}
                 fill="none"
                 variants={pathVariants}
+                initial="initial"
+                animate="animate"
                 d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"
               />
             </motion.svg>
@@ -124,9 +134,11 @@ export const NavButton = ({ open, ...props }) => {
               <motion.path
                 key="open-icon"
                 fill-rule="evenodd"
-                stroke={"white"}
+                stroke={color}
                 fill="none"
                 variants={pathVariants}
+                initial="initial"
+                animate="animate"
                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
               />
             </motion.svg>
