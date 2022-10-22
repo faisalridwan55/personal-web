@@ -5,9 +5,9 @@ import Home from './containers/Home';
 import About from './containers/About';
 import Header from './containers/Header';
 import Contact from './containers/Contact';
+import Sidebar from "./components/Sidebar";
 import SkillAndPortofolios from './containers/S&P';
 import NotPageFound from './containers/NotPageFound';
-import Sidebar from "./components/Sidebar";
 
 function App() {
   const [isSidebar, setIsSidebar] = useState(false);
