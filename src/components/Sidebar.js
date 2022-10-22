@@ -1,9 +1,10 @@
 import { AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
 import styledComponents from "styled-components";
-import { BACKGROUND_COLOR } from "../constants/Colors";
+
+import { WHITE } from "../constants/Colors";
 import { DIST_SIZE, FONT_SIZE } from "../constants/Size";
 import { CustomNavLink, NavButton } from "../containers/Header/components";
+
 import { Box, Row } from "./Grid";
 import MotionWrapper from "./MotionWrapper";
 
@@ -23,7 +24,6 @@ const SidebarContainer = styledComponents.div`
 `
 
 const Sidebar = ({showSidebar, handleNavButtonClicked}) => {
-    const color = BACKGROUND_COLOR[useLocation().pathname.replace('/', '') || 'home']
     const rowStyle = {marginBottom: DIST_SIZE().l}
     const navStyle = {fontSize: FONT_SIZE().l}
     const containerMargin = DIST_SIZE().xl 
@@ -41,7 +41,7 @@ const Sidebar = ({showSidebar, handleNavButtonClicked}) => {
                         height: '100%',
                         position: 'fixed',
                         zIndex: '998',
-                        backgroundColor: color,
+                        backgroundColor: WHITE,
                     }}
                 >
                     <SidebarContainer>

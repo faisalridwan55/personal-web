@@ -1,13 +1,14 @@
-export const RED = "#F67E7D";
-export const GREEN = "#5F939E";
-export const WHITE = "#FAFAFA";
-export const BLACK = "#001021";
-export const BLUE = "#0267C1";
+export const WHITE = "#FFFFFF";
+export const BLACK = "#000000";
+
+export const RED = "#ff1513";
+export const BLUE = "#61dffa";
+export const GREEN = "#93feac";
 export const YELLOW = "#F4F726";
 
-export const BACKGROUND_COLOR = {
-    home: "#73BFE8",
-    about: "#9DD2A3",
-    skill: "#FAD4C0",
-    contact: "#9B9ECE",
+export const TEXT_COLOR = {
+    home: RED,
+    about: GREEN,
+    skill: BLUE,
+    contact: YELLOW,
 }

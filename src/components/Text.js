@@ -5,8 +5,8 @@ import { FONT_SIZE } from "../constants/Size";
 
 export const Title = styled(motion.p)`
     margin: 0;
-    color: ${WHITE};
     font-weight: bold;
+    color: ${props => props.color || WHITE};
     text-align: ${props => props.textAlign};
     font-family: Zilla Slab, serif;
     ${props => `font-size: ${FONT_SIZE()[props.size || 'xxxl']};`}
