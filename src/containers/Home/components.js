@@ -85,7 +85,7 @@ export const SecretText = () => {
             variants={secretVariants}
             transition={{ duration: 1 }}
           >
-            I have an experience to be Project Manager from previous company
+            I have experience being a Project Manager from a previous company
           </Text>
         )}
       </AnimatePresence>

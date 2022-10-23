@@ -25,7 +25,8 @@ const Home = () => (
     </Title>
     <Box>
       <Text size="xl" color={BLACK} textAlign="center" bold>
-        Currently, I work as full-stack developer for company from Singapore.
+        Currently, I am working as a full-stack developer for a Singapore
+        Company.
       </Text>
       <SecretText />
       <CollapsibleRow title="This is collapsible header (click me!)">
