@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-import { FONT_SIZE } from "../constants/Size";
+import { DIST_SIZE, FONT_SIZE } from "../constants/Size";
 import { useColor } from "../functions/useColor";
 
 export const Title = (props) => {
   const color = useColor();
 
   const Element = styled(motion.p)`
-    margin: 0;
     color: ${color};
     text-align: ${(props) => props.textAlign};
     font-family: "Silkscreen", cursive;
     ${(props) => `font-size: ${FONT_SIZE()[props.size || "xxxl"]};`}
+    margin: ${(props) => (props.margin ? `0 0 ${DIST_SIZE().l}` : "0")};
   `;
 
   return <Element {...props} />;

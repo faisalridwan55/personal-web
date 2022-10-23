@@ -18,10 +18,10 @@ export const DIST_SIZE = () => {
   const isDesktop = IsDesktop();
 
   return {
-    xs: isDesktop ? "8px" : "4px",
-    sm: isDesktop ? "16px" : "8px",
-    md: isDesktop ? "24px" : "12px",
-    l: isDesktop ? "32px" : "16px",
-    xl: isDesktop ? "40px" : "20px",
+    xs: isDesktop ? "8px" : "6px",
+    sm: isDesktop ? "16px" : "12px",
+    md: isDesktop ? "24px" : "18px",
+    l: isDesktop ? "32px" : "24px",
+    xl: isDesktop ? "40px" : "30px",
   };
 };

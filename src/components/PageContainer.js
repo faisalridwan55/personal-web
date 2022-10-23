@@ -13,6 +13,7 @@ const PageContainer = (props) => {
   const page = useLocation().pathname.replace("/", "");
 
   const PageContainer = styled(Box)`
+    max-width: 1440px;
     background-color: ${BLACK};
     padding: ${verticalPadding}px 5%;
     min-height: calc(100vh - ${verticalPadding * 2}px);
@@ -21,7 +22,7 @@ const PageContainer = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setFirstLoad(false);
-    }, 2000);
+    }, 1000);
   }, [firstLoad]);
 
   return (
