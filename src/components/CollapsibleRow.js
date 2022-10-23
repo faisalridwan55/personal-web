@@ -7,6 +7,7 @@ import { Box, Row } from "./Grid";
 
 import { DIST_SIZE } from "../constants/Size";
 import { useColor } from "../functions/useColor";
+import IsDesktop from "../functions/isDesktop";
 
 export const CollapsibleContainer = (props) => {
   const color = useColor();
@@ -36,6 +37,7 @@ export const CollapsButton = ({ isOpen, ...props }) => {
 
   const style = {
     right: "10px",
+    top: IsDesktop() ? "19px" : "7px",
     position: "absolute",
     borderStyle: "none",
     backgroundColor: "transparent",
