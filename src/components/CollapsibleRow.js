@@ -37,7 +37,7 @@ export const CollapsButton = ({ isOpen, ...props }) => {
 
   const style = {
     right: "10px",
-    top: IsDesktop() ? "19px" : "7px",
+    top: IsDesktop() ? "19px" : "10px",
     position: "absolute",
     borderStyle: "none",
     backgroundColor: "transparent",
